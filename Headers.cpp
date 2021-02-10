@@ -5,129 +5,130 @@ int randValue;
 
 void advisory::getTask()
 {
-	randValue = rd() % 3;
-	cout << randValue;
+	if (forcedNextTask == "")
+	{
+		randValue = rd() % 3;
+		cout << randValue;
 
-	if (randValue == 1)
-	{	
-		if (mediumChallengesCompleted < easyChallengesCompleted and mediumChallengesCompleted < hardChallengesCompleted)
-		{
-			cout << "Medium task";
-			easyChallengesCompleted++;
-		}
-
-		if (hardChallengesCompleted < easyChallengesCompleted and hardChallengesCompleted < mediumChallengesCompleted)
-		{
-			cout << "Hard task";
-			easyChallengesCompleted++;
-		}
-
-		if (easyChallengesCompleted < mediumChallengesCompleted and easyChallengesCompleted < hardChallengesCompleted)
-		{
-			cout << "Easy task";
-			easyChallengesCompleted++;
-		}
-
-		if (easyChallengesCompleted == mediumChallengesCompleted or easyChallengesCompleted == hardChallengesCompleted or hardChallengesCompleted == mediumChallengesCompleted)
-		{
-			randValue = rd() % 3;
+		if (randValue == 1)
+		{	
+			randValue = rd() % 20;
 			
 			if (randValue == 1)
 			{
-				easyChallengesCompleted++;
+				nextTask = "Everyone do 5 jumping jacks"
 			}
+			
+			if (randValue == 2)
+			{
+				nextTask = "Everyone do 5 jumping jacks"
+			}
+			
+			if (randValue == 3)
+			{
+				nextTask = "Everyone do 5 jumping jacks"
+			}
+			
+			if (randValue == 4)
+			{
+				nextTask = "Everyone do 5 jumping jacks"
+			}
+			
+			if (randValue == 5)
+			{
+				nextTask = "Everyone do 5 jumping jacks"
+			}
+		}
 
+		if (randValue == 2)
+		{
+			randValue = rd() % 20;
+			
 			if (randValue == 1)
 			{
-				mediumChallengesCompleted++;
+				nextTask = "Everyone do 10 jumping jacks"
 			}
+			
+			if (randValue == 2)
+			{
+				nextTask = "Everyone do 10 jumping jacks"
+			}
+			
+			if (randValue == 3)
+			{
+				nextTask = "Everyone do 10 jumping jacks"
+			}
+			
+			if (randValue == 4)
+			{
+				nextTask = "Everyone do 10 jumping jacks"
+			}
+			
+			if (randValue == 5)
+			{
+				nextTask = "Everyone do 10 jumping jacks"
+			}
+		}
 
+		if (randValue == 3)
+		{
+			randValue = rd() % 20;
+			
 			if (randValue == 1)
 			{
-				hardChallengesCompleted++;
+				nextTask = "Everyone do 15 jumping jacks"
+			}
+			
+			if (randValue == 2)
+			{
+				nextTask = "Everyone do 15 jumping jacks"
+			}
+			
+			if (randValue == 3)
+			{
+				nextTask = "Everyone do 15 jumping jacks"
+			}
+			
+			if (randValue == 4)
+			{
+				nextTask = "Everyone do 15 jumping jacks"
+			}
+			
+			if (randValue == 5)
+			{
+				nextTask = "Everyone do 15 jumping jacks"
 			}
 		}
 	}
-
-	if (randValue == 2)
+	else
 	{
-		if (easyChallengesCompleted < mediumChallengesCompleted and easyChallengesCompleted < hardChallengesCompleted)
+		if (foredNextTask == "Hard")
 		{
-			cout << "Easy task";
-			easyChallengesCompleted++;
-		}
-
-		if (hardChallengesCompleted < easyChallengesCompleted and hardChallengesCompleted < mediumChallengesCompleted)
-		{
-			cout << "Hard task";
-			easyChallengesCompleted++;
-		}
-
-		if (mediumChallengesCompleted < easyChallengesCompleted and mediumChallengesCompleted < hardChallengesCompleted)
-		{
-			cout << "Medium task";
-			easyChallengesCompleted++;
-		}
-
-		if (easyChallengesCompleted == mediumChallengesCompleted or easyChallengesCompleted == hardChallengesCompleted or hardChallengesCompleted == mediumChallengesCompleted)
-		{
-			randValue = rd() % 3;
-
+			randValue = rd() % 20;
+			
 			if (randValue == 1)
 			{
-				easyChallengesCompleted++;
-			}
-
-			if (randValue == 1)
-			{
-				mediumChallengesCompleted++;
-			}
-
-			if (randValue == 1)
-			{
-				hardChallengesCompleted++;
+				nextTask = "Everyone do 5 jumping jacks"
 			}
 		}
-
-	}
-
-	if (randValue == 3)
-	{
-		if (hardChallengesCompleted < easyChallengesCompleted and hardChallengesCompleted < mediumChallengesCompleted)
+		
+		if (forcedNextTask == "Medium")
 		{
-			cout << "Hard task";
-			easyChallengesCompleted++;
-		}
-
-		if (mediumChallengesCompleted < easyChallengesCompleted and mediumChallengesCompleted < hardChallengesCompleted)
-		{
-			cout << "Medium task";
-			easyChallengesCompleted++;
-		}
-
-		if (easyChallengesCompleted < mediumChallengesCompleted and easyChallengesCompleted < hardChallengesCompleted)
-		{
-			cout << "Easy task";
-			easyChallengesCompleted++;
-		}
-
-		if (easyChallengesCompleted == mediumChallengesCompleted or easyChallengesCompleted == hardChallengesCompleted or hardChallengesCompleted == mediumChallengesCompleted)
-		{
-			randValue = rd() % 3;
-
+			randValue = rd() % 20;
+			
 			if (randValue == 1)
 			{
-				easyChallengesCompleted++;
+				nextTask = "Everyone do 10 jumping jacks"
 			}
-
+		}
+		
+		if (forcedNextTask == "Easy")
+		{
+			randValue = rd() % 20;
+			
 			if (randValue == 1)
 			{
-				mediumChallengesCompleted++;
-			}
-
-			if (randValue == 1)
-			{
-				hardChallengesCompleted++;
+				nextTask = "Everyone do 15 jumping jacks"
 			}
 		}
 	}
