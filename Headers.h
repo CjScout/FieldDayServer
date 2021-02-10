@@ -11,6 +11,7 @@ class advisory {
 
 public:
 	string id;
+	string forcedNextTask;
 	string nextTask;
 	int points;
 
