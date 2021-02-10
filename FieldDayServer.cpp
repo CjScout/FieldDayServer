@@ -49,6 +49,8 @@ sf::Uint32 grade8Score = 1;
 
 int main()
 {
+    advisory1.id = "Griffin";
+
     while (true)
     {
         if (listener.listen(53000) != sf::Socket::Done)
@@ -58,7 +60,7 @@ int main()
 
         if (listener.accept(link) != sf::Socket::Done)
         {
-            // error...
+            cout << "Error completing connection";
         }
 
         link.receive(packet);
@@ -66,23 +68,10 @@ int main()
 
         if (action == "task")
         {
-            if (id == "Griffin")
+            if (id == advisory1.id)
             {
-                advisory1.points += value;
-
-                cout << "Added " << value << " points to Mrs. Griffin's grade 8 team." << endl;
-
-                link.disconnect();
+                advisory1.getTask();
             }
         }
-
-        if (action == "score")
-        {
-            packet << grade5Score << grade6Score << grade7Score << grade8Score;
-
-            link.send(packet);
-            link.disconnect();
-        }
-
     }
 }

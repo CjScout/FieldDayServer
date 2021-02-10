@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <random>
 #include <SFML/Network.hpp>
 
 using namespace std;
@@ -15,4 +16,6 @@ public:
 	int easyChallengesCompleted;
 	int mediumChallengesCompleted;
 	int hardChallengesCompleted;
+
+	void getTask();
 };
