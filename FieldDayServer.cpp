@@ -75,27 +75,23 @@ int main()
                 task = advisory1.nextTask;
                 packet << task;
                 link.send(packet);
+                
+                link.recieve(packet);
+                
+                packet >> value;
+                
+                if (value == 1)
+                {
+                    advisory1.points++;
+                }
+                
+                if (value == 2)
+                {
+                    advisory1.points--;
+                }
+                
+                link.disconnect();
             }
-            
-            if (id == advisory2.id)
-            {
-                advisory2.getTask();
-                task = advisory2.nextTask;
-                packet << task;
-                link.send(packet);
-            }
-            
-            if (id == advisory3.id)
-            {
-                advisory3.getTask();
-                task = advisory3.nextTask;
-                packet << task;
-                link.send(packet);
-            }
-            
-            packet << task;
-            link.send(packet);
-            link.disconnect();
         }
     }
 }
