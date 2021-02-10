@@ -41,11 +41,12 @@ string action;
 int inValue;
 int value;
 string output;
+string task;
 
-sf::Uint32 grade5Score = 5;
-sf::Uint32 grade6Score = 9;
-sf::Uint32 grade7Score = 3;
-sf::Uint32 grade8Score = 1;
+sf::Uint32 grade5Score = 0;
+sf::Uint32 grade6Score = 0;
+sf::Uint32 grade7Score = 0;
+sf::Uint32 grade8Score = 0;
 
 int main()
 {
@@ -71,7 +72,30 @@ int main()
             if (id == advisory1.id)
             {
                 advisory1.getTask();
+                task = advisory1.nextTask;
+                packet << task;
+                link.send(packet);
             }
+            
+            if (id == advisory2.id)
+            {
+                advisory2.getTask();
+                task = advisory2.nextTask;
+                packet << task;
+                link.send(packet);
+            }
+            
+            if (id == advisory3.id)
+            {
+                advisory3.getTask();
+                task = advisory3.nextTask;
+                packet << task;
+                link.send(packet);
+            }
+            
+            packet << task;
+            link.send(packet);
+            link.disconnect();
         }
     }
 }
