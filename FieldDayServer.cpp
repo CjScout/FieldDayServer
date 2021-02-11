@@ -1,7 +1,9 @@
 #include "Headers.h"
+#include "classData.h"
 
 sf::TcpListener listener;
 sf::Packet packet;
+sf::Packet packet2;
 
 sf::TcpSocket link;
 
@@ -73,10 +75,10 @@ int main()
             {
                 advisory1.getTask();
                 task = advisory1.nextTask;
-                packet << task;
+                packet2 << task;
                 link.send(packet);
                 
-                link.recieve(packet);
+                link.receive(packet);
                 
                 packet >> value;
                 
@@ -89,7 +91,9 @@ int main()
                 {
                     advisory1.points--;
                 }
-                
+
+                cout << advisory1.points;
+
                 link.disconnect();
             }
         }

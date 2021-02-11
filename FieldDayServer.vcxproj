@@ -145,10 +145,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="classData.cpp" />
     <ClCompile Include="FieldDayServer.cpp" />
-    <ClCompile Include="Headers.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="classData.h" />
     <ClInclude Include="Headers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

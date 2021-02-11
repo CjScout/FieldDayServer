@@ -18,13 +18,16 @@
     <ClCompile Include="FieldDayServer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Headers.cpp">
+    <ClCompile Include="classData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="classData.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
